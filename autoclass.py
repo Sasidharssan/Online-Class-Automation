@@ -2,7 +2,6 @@ import datetime
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
 
 subjects=["15EE701", "15ECP18", "15EEC12", "15EEC08", "15EE753", "15EEC17", "15EE702", "Fine-Arts"]
 #chromedriver_path = 'C:\Program Files (x86)\chromedriver.exe'
