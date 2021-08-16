@@ -7,3 +7,10 @@ To run this program
    pip install selenium or pip3 install selenium
 3. Then install chrome webdriver from https://chromedriver.chromium.org/ for your chrome version. My program is written for brave browser. If you're using chrome or firefox, it requires little tweaks on the program.
 4. Extract the downoaded zip file and copy the .exe file inside that to C:\Program Files(x86)
+
+#To use the program
+Open the program using an editor.
+If you are using windows, change the chromedriver path in the given program. To use google chrome web-browser, uncomment lines 8 and 9 and comment out the lines below it.
+Add username and password.
+Add the subjects you've taken in subjects list.
+Then run the program.
