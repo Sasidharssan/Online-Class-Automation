@@ -3,21 +3,25 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
+Google_Chrome = 0
+Username = 'XXXXXXXX'
+Password = 'XXXX'
 subjects=["15EE701", "15ECP18", "15EEC12", "15EEC08", "15EE753", "15EEC17", "15EE702", "Fine-Arts"]
-#chromedriver_path = 'C:\Program Files (x86)\chromedriver.exe'
-#browser = webdriver.Chrome(chromedriver_path)
-     #   uncomment the above two lines and add hash at the beginning of 5 lines below; Change the driverpath accordingly.
-chromedriver_path = '/usr/bin/chromedriver'
-brave_path = '/usr/bin/brave'
-option = webdriver.ChromeOptions()
-option.binary_location = brave_path
-browser = webdriver.Chrome(executable_path=chromedriver_path, options=option)
+if Google_Chrome == 1:
+     chromedriver_path = 'C:\Program Files (x86)\chromedriver.exe'
+     browser = webdriver.Chrome(chromedriver_path)
+else:
+     chromedriver_path = '/usr/bin/chromedriver'
+     brave_path = '/usr/bin/brave' # Or location of .exe file of browser in your system
+     option = webdriver.ChromeOptions()
+     option.binary_location = brave_path
+     browser = webdriver.Chrome(executable_path=chromedriver_path, options=option)
 
 browser.get("https://a.impartus.com/login/#/")
 username = browser.find_element_by_id("username")
-username.send_keys('XXXXXXXX')
+username.send_keys(Username)
 password = browser.find_element_by_id("password")
-password.send_keys('XXXXXXX')
+password.send_keys(Password)
 password.send_keys(Keys.RETURN)
 
 time.sleep(10)
@@ -71,6 +75,8 @@ if int(datetime.datetime.now().strftime("%H")) < 13:
     print('morning classes are over')
     time.sleep(2400)
     for x in range(3):
+        if int(datetime.datetime.now().strftime("%H")) == 16 and int(datetime.datetime.now().strftime("%M")) > 30:
+            break
         try:
             autoclass()
             tryfunc(30, 35)
@@ -78,6 +84,8 @@ if int(datetime.datetime.now().strftime("%H")) < 13:
             execfunc(30, 35)
 elif int(datetime.datetime.now().strftime("%H")) < 17:
     for x in range(3):
+        if int(datetime.datetime.now().strftime("%H")) == 16 and int(datetime.datetime.now().strftime("%M")) > 30:
+            break
         try:
             autoclass()
             tryfunc(30, 35)
@@ -85,3 +93,4 @@ elif int(datetime.datetime.now().strftime("%H")) < 17:
             execfunc(30, 35)
 else:
     print("No classes now")
+browser.close()
