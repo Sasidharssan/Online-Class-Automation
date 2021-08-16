@@ -10,7 +10,7 @@ To run this program
 
 # To use the program
 1. Open the program using an editor. <br />
-2. If you are using windows, change the chromedriver path in the program accordingly. To use Google Chrome, put 1 to th value of google chrome<br />
+2. If you are using windows, change the chromedriver path in the program accordingly. To use Google Chrome, put 1 to the value of variable Google_Chrome<br />
 3. Add username and password. <br />
 4. Add the subjects you've taken in subjects list. <br />
 5. Then run the program.
