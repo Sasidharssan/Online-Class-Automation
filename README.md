@@ -9,8 +9,8 @@ To run this program
 4. Extract the downoaded zip file and copy the .exe file inside that to C:\Program Files(x86)
 
 # To use the program
-Open the program using an editor. <br />
-If you are using windows, change the chromedriver path in the given program. To use google chrome web-browser, uncomment lines 8 and 9 and comment out the lines below it. <br />
-Add username and password. <br />
-Add the subjects you've taken in subjects list. <br />
-Then run the program.
+1. Open the program using an editor. <br />
+2. If you are using windows, change the chromedriver path in the given program. To use google chrome web-browser, uncomment lines 8 and 9 and comment out the lines below it. <br />
+3. Add username and password. <br />
+4. Add the subjects you've taken in subjects list. <br />
+5. Then run the program.
