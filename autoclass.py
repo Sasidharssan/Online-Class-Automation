@@ -53,6 +53,7 @@ def tryfunc(a, b):
         time.sleep(300)
     browser.close()
     browser.switch_to.window(browser.window_handles[0])
+    browser.refresh()
     time.sleep(600)
 
 def execfunc(a,b):
