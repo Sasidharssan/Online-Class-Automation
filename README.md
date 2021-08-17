@@ -9,8 +9,9 @@ To run this program
 4. Extract the downoaded zip file and copy the .exe file inside that to C:\Program Files(x86)
 
 # To use the program
-1. Open the program using an editor. <br />
-2. If you are using windows, change the chromedriver path in the program accordingly. To use Google Chrome, put 1 to the value of variable Google_Chrome<br />
-3. Add username and password. <br />
-4. Add the subjects you've taken in subjects list. <br />
-5. Then run the program.
+1. Download the program.
+2. Open autoclass.py using an editor. <br />
+3. If you are using windows, change the chromedriver path in autoclass.py program accordingly. To use Google Chrome, put 1 to the value of variable Google_Chrome<br />
+4. Add username and password. <br />
+5. Add the subjects you've taken in subjects list. <br />
+6. Then run the program.
