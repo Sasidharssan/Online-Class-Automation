@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 Google_Chrome = 0
 Username = 'XXXXXXXX'
 Password = 'XXXX'
-subjects=["15EE701", "15ECP18", "15EEC12", "15EEC08", "15EE753", "15EEC17", "15EE702", "Fine-Arts"]
+subjects=["15EE701", "15ECP18", "15EEC12", "15EEC08", "15EE753", "15EEC17", "15EE702"]
 if Google_Chrome == 1:
      chromedriver_path = 'C:\Program Files (x86)\chromedriver.exe'
      browser = webdriver.Chrome(chromedriver_path)
@@ -27,8 +27,12 @@ password.send_keys(Keys.RETURN)
 time.sleep(10)
 
 def autoclass():
+    live = browser.find_element_by_xpath('/html/body/div[1]/ui-view/div[1]/div[2]/ui-view/div/div[1]/div[3]')
+    live.click()
     sub = "/html/body/div[1]/ui-view/div[1]/div[2]/ui-view/div/div[2]/div[3]/dashboard-interests/div/live-streaming-lectures/md-card/md-list/div[1]/div[%d]/div[1]/div[1]"
-    sublist = [browser.find_element_by_xpath(sub%x).text for x in range(1,6)]
+
+    sub = "/html/body/div[1]/ui-view/div[1]/div[2]/ui-view/div/div[2]/div[3]/dashboard-interests/div/live-streaming-lectures/md-card/md-list/div[1]/div[%d]/div[1]/div[1]"
+    sublist = [browser.find_element_by_xpath(sub%x).text for x in range(1,4)]
 
     i=len(sublist)-1
     while i >= 0:
@@ -47,10 +51,10 @@ def autoclass():
     join_in.click()
 
 def tryfunc(a, b):
-    for x in range(12):
+    for x in range(24):
         if int(datetime.datetime.now().strftime("%M")) >= a and int(datetime.datetime.now().strftime("%M")) < b:
             break
-        time.sleep(300)
+        time.sleep(150)
     browser.close()
     browser.switch_to.window(browser.window_handles[0])
     browser.refresh()
@@ -58,10 +62,10 @@ def tryfunc(a, b):
 
 def execfunc(a,b):
     print("No Classes for now")
-    for x in range(12):
+    for x in range(24):
         if int(datetime.datetime.now().strftime("%M")) >= a and int(datetime.datetime.now().strftime("%M")) < b:
             break
-        time.sleep(300)
+        time.sleep(150)
     time.sleep(600)
 
 if int(datetime.datetime.now().strftime("%H")) < 13:
@@ -70,9 +74,9 @@ if int(datetime.datetime.now().strftime("%H")) < 13:
             break
         try:
             autoclass()
-            tryfunc(50, 55)
+            tryfunc(50, 59)
         except:
-            execfunc(50, 55)
+            execfunc(50, 59)
     print('morning classes are over')
     time.sleep(2400)
     for x in range(3):
@@ -80,18 +84,18 @@ if int(datetime.datetime.now().strftime("%H")) < 13:
             break
         try:
             autoclass()
-            tryfunc(30, 35)
+            tryfunc(30, 39)
         except:
-            execfunc(30, 35)
+            execfunc(30, 39)
 elif int(datetime.datetime.now().strftime("%H")) < 17:
     for x in range(3):
         if int(datetime.datetime.now().strftime("%H")) == 16 and int(datetime.datetime.now().strftime("%M")) > 30:
             break
         try:
             autoclass()
-            tryfunc(30, 35)
+            tryfunc(30, 39)
         except:
-            execfunc(30, 35)
+            execfunc(30, 39)
 else:
     print("No classes now")
 browser.close()
